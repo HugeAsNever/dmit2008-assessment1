@@ -1,0 +1,26 @@
+@use './../variants/colors';
+%button{
+    width:100%;
+    background-color: transparent;
+    padding: 0.5rem 2rem;
+    border:none;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 0 colors.$slate-700;
+    outline:none;
+}
+
+button{
+    @extend %button;
+}
+.submit{
+   background-color:colors.$sky-600;
+   box-shadow: none;
+   color:white;
+}
+
+.button-small{
+    @extend button;
+    font-size:14px;
+    padding:0.25rem 1rem;
+}
+

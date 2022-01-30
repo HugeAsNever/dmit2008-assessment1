@@ -1,0 +1,36 @@
+@use 'variants' as *;
+
+.page-header{
+    padding: 1rem 0 0;
+    text-align: center;
+  
+    h1{
+        color:rgb(27, 17, 17);
+        font-size:2.75rem;
+    }
+    p{
+        font-size:14px;
+        margin-top:-0.25rem;
+        color: $zinc-500;
+    }
+ 
+   
+}
+
+@media(min-width:600px){
+    .page-header{
+        padding: 2rem 0 0;
+        text-align: center;
+      
+        h1{
+            color:rgb(27, 17, 17);
+            font-size:3.75rem;
+        }
+        p{
+            font-size:20px;
+            margin-top:-1rem
+        }
+        
+       
+    }  
+}

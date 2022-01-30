@@ -1,0 +1,28 @@
+.app-bar{
+    padding:1rem;
+   
+    ul{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo-icon{
+    width:32px;
+}
+
+.brand-icon{
+    text-align: center;
+    width:192px;
+    font-size:0.85rem;
+    p{
+        padding-left: 0.5rem;
+        margin-bottom:0.25rem;
+    }
+}
+.mobile-menu-icon{
+    width:20px;
+}
+ 
+
