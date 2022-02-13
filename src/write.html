@@ -46,61 +46,59 @@
   </head>
 
   <body>
-    
-    <header>
-      <!-- Image and text -->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         
-        <a class="navbar-brand" href="index.html"><img src="./static/images/logo.png" class="d-inline-block align-top" width="100" alt="company logo"></a>
-        <h1 class="display-2">Bennies & Beans</h1>
-      </nav>
-      
+      <a class="navbar-brand" href="index.html"><img src="static/images/logo.png" class="d-inline-block align-top" width="100" alt="company logo"></a>
+      <h1 class="display-2">Bennies & Beans</h1>
+    </nav>
+
+    <header class="page-header">
+      <h1>Bennies & Beans Cloud Services</h1>
+      <p>add product info to the real time database</p>
     </header>
+ 
+ 
     <main>
-      <div class="container">
-        <aside class="write-to-rtd">
-          <form id="productForm" class="add-new-product">
+
+      <form id="productForm" class="add-new-property">
        
-            <div class="product-image form-control">
-              <div id="uploadImage" class="display">
-                <img src="static/images/default.jpg" alt="upload product image">
-              </div>   
-                <label for="productImage">Select image</label>
-                <input type="file" id="productImage" style="display:none"  class="select-file"   accept=".jpg, .png, .jpeg, .webp" required>
-            </div>
-    
-            <div class="product-name form-control">
-              <label for="productName">Product Title</label>         
-               <input id="productName" type="text" required>
-            </div>
+        <div class="product-image form-control">
+          <div class="display">
+            <img src="static/images/default.jpg" alt="product image">
+          </div>   
+            <label for="productImage">Select image </label>
+            <input type="file" id="productImage" style="display:none"  class="select-file"   accept=".jpg, .png, .jpeg, .webp" required>
+        </div>
 
-            <div class="price form-control">
-              <label for="price">Price</label>         
-               <input id="price" type="number" step="0.01" required> 
-            </div>
+        <div class="product-name form-control">
+          <label for="productName">Product Title</label>         
+          <input id="productName" type="text" required>
+        </div>
 
-            <div class="rating form-control">
-              <label for="rating">Rating</label>         
-               <input id="rating" type="number" step="0.1" required>
-            </div>
+        <div class="price form-control">
+          <label for="price">Price</label>         
+           <input id="price" type="number" step="0.01" required> 
+        </div>
 
-            <div class="review form-control">
-              <label for="review">Review</label>         
-               <input id="review" type="number" step="1" required>
-            </div>
-            
-            <div class="submit-button form-control">
-              <button type="submit" style="background-color: green">Add Product</button>
-    
-            </div>
+        <div class="rating form-control">
+          <label for="rating">Rating</label>         
+           <input id="rating" type="number" step="0.1" required>
+        </div>
 
-            <div class="submit-button form-control">
-              <button onclick="location.href='index.html'" type="button" style="background-color: red">Cancel</button>
-            </div>
-          </form>
-        </aside>
-      </div>
-     
+        <div class="review form-control">
+          <label for="review">Review</label>         
+           <input id="review" type="number" step="1" required>
+        </div>
+        
+        <div class="submit-button form-control">
+          <button type="submit" style="background-color: green">Add Product</button>
+        </div>
+        <div class="submit-button form-control">
+          <button onclick="location.href='index.html'" type="button" style="background-color: red">Cancel</button>
+        </div>
+
+      </form>
+   
     </main>
   </body>
 </html>
