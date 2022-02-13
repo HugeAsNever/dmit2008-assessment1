@@ -1,52 +1,48 @@
-import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
-import {ref as databaseRef, push, set, get, remove} from 'firebase/database'
-import { db, storage  } from "./libs/firebase/firebaseConfig";
+import {ref as storageRef, uploadBytes, getDownloadURL} from "firebase/storage";
+import {ref as databaseRef, push, set, get} from 'firebase/database';
+import {db, storage} from "./libs/firebase/firebaseConfig";
 
-document.querySelector("#rentalImage").addEventListener("change", onImageSelected);
-document.forms["rentalForm"].addEventListener("submit", onAddRental); 
+document.forms["productForm"].addEventListener("submit",onAddProduct);
+document.querySelector("#productImage").addEventListener("change",onImageSelected);
+
+function onAddProduct(evt) {
+    evt.preventDefault();
+    uploadNewProduct();
+}
 
 
-    function onAddRental(e) {
-        e.preventDefault();
-        uploadNewVacactionRenal();
-    }
-  
-
-   function onImageSelected(e) {
-    //selected file
-    // file objets   [fileObj, fileObj, fileObj]
-    let file = e.target.files[0];
-    // update the display with the requested image
+function onImageSelected(evt) {
+    let file = evt.target.files[0];
+    console.log(file);
     document.querySelector(".display img").src = URL.createObjectURL(file);
 }
 
-    async function uploadNewVacactionRenal() {
-        // form data
-        const city = document.querySelector('#cityName').value.trim();
-        const file = document.querySelector('#rentalImage').files[0]
-        
-        // paths to the data to write
-        const imageRef =     storageRef( storage, `images/${file.name}`);
-        const dataRef =  databaseRef( db, 'rentals')
+async function uploadNewProduct() {
+    const name = document.querySelector('#productName').value.trim();
+    const price = document.querySelector('#price').value.trim();
+    const rating = document.querySelector('#rating').value.trim();
+    const review = document.querySelector('#review').value.trim();
+    const file = document.querySelector('#productImage').files[0];
 
-        // uploading file to the storage bucket
-        const uploadResult = await uploadBytes(imageRef, file);
-        // url to the image stored in storage bucket
-        const urlPath =  await getDownloadURL(imageRef) 
-        // path on the storage bucket to the image
-        const storagePath = uploadResult.metadata.fullPath;
+    const imageRef = storageRef(storage,`productsImage/${file.name}`);
+    const dataRef =  databaseRef( db, 'products');
 
-        // firebase unique key
-        const itemRef = await push(dataRef)
-        
-        set(itemRef,{
-           key:itemRef.key,
-           sku:`jhvr${itemRef.key}`,
-           urlPath,
-           storagePath,
-           city,
-           price:12499
-        })
-        
-    }
- 
+    const uploadResult = await uploadBytes(imageRef, file);
+    const urlPath =  await getDownloadURL(imageRef);
+    const storagePath = uploadResult.metadata.fullPath;
+
+    //push return a ref to area with the key but no data written yet.
+    const itemRef = await push(dataRef);
+
+    set(itemRef,{
+        key:itemRef.key,
+        sku: `darksoul${itemRef.key}`,
+        urlPath,
+        storagePath,
+        name,
+        price,
+        rating,
+        review
+     })
+
+}
