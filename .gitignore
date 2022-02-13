@@ -7,7 +7,7 @@
 .env-template
 
 # firebase config file
-/src/js/libs/firebase/firebaseConfig-old.js
+ 
 
 # Parcel Development Files
 /.parcel-cache

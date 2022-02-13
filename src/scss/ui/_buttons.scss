@@ -1,19 +1,24 @@
-@use './../variants/colors';
+@use './../variants/colors' as *;
 %button{
-    width:100%;
     background-color: transparent;
     padding: 0.5rem 2rem;
     border:none;
     border-radius: 3px;
-    box-shadow: 0 0 3px 0 colors.$slate-700;
+    box-shadow: 0 0 1px 1px  $stone-300;
     outline:none;
+    color:$stone-500;
 }
 
 button{
     @extend %button;
 }
+.button-small{
+    font-size:14px;
+}
 .submit{
-   background-color:colors.$sky-600;
+    @extend %button;
+    width:100%;
+   background-color: $sky-600;
    box-shadow: none;
    color:white;
 }

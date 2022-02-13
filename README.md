@@ -1,46 +1,18 @@
-# Firebase Real Time Database
-
-### NPM Packages to insall
-- installing firebase
-- install parcel
-
-### Firebase Config From Console
-- js/libs/firebaseConfig.js
-```javascript
-import {getDatabase} from 'firebase/database';
+# Crudy Read JavaScript
+How to read data from the real time database and render the vacations in the browser. Your template should display the image the city and present the user with options to remove or edit the vacation rental property.
 
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app)
-export {db}
-```
+ 
+### 1. Make Sure You Have Data
+Make sure you have at least 4 data sets in the RTD (real time database). We will use this data in the read.html page to present the data using a render function.
 
 
-### Starting Parcel Bundler Dev Server
-used to compile your project 
-
-Start the parcel dev server
-```npm
-    npx parcel src/index.html
-```
+### 2. Code
+The code for the example is in the snippets folder ```read.md```.  
+You still have to create a display component for a vacation rental and add the styles.
+ 
+ 
 
 
-### Stop the Parcel Bunlder Dev Server
-Kill Process parcel dev server
-```
-   CTRL+C
-```
-
-
-- Setup Firebase Web App VJS(vanilla javascript)
-- config client for firebase
-- import and connect to serivices inside config db, auth,
-- write to RTD
-- read from the RTD
-
-
-- delete
-- update set
 
 
